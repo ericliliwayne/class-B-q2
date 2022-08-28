@@ -138,7 +138,7 @@ if(!isset($_SESSION['total'])){
         $total['total']++;
         $Total->save($total);
     }else{
-        $Today->save(['date'=>date("Y-m-d"),'total'=>1]);
+        $Total->save(['date'=>date("Y-m-d"),'total'=>1]);
     }
 }
 ?>

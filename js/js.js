@@ -19,3 +19,8 @@ function good(id,type,user)
 		}
 	})
 }
+function logout(){
+	$.post("./api/logout.php",()=>{
+		location.reload();
+	})
+}
