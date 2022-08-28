@@ -129,4 +129,15 @@ function to($url){
 }
 
 $Total = new DB('total');
+
+if(!isset($_SESSION['total'])){
+    $chkDate=$Total->math('count','id',['date'=>date("Y-m-d")]);
+    if($chkDate>=1){
+        $total=$Total->find(['date'=>date("Y-m-d")]);
+        $total['total']++;
+        $Total->save($total);
+    }else{
+        $Today->save(['date'=>date("Y-m-d"),'total'=>1]);
+    }
+}
 ?>
